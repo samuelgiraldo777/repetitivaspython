@@ -1,0 +1,36 @@
+totalAlumnos = int(input("Ingrese la cantidad total de alumnos: "))
+
+sumaEdadesHombres = 0
+contadorHombres = 0
+sumaEdadesMujeres = 0
+contadorMujeres = 0
+sumaEdadesTotal = 0
+
+for contador in range(totalAlumnos):
+    sexo = input("Ingrese el sexo del alumno (H para hombre, M para mujer): ")
+    edad = int(input("Ingrese la edad del alumno: "))
+    
+    sumaEdadesTotal = sumaEdadesTotal + edad
+    
+    if sexo == "H" or sexo == "h":
+        sumaEdadesHombres = sumaEdadesHombres + edad
+        contadorHombres = contadorHombres + 1
+    elif sexo == "M" or sexo == "m":
+        sumaEdadesMujeres = sumaEdadesMujeres + edad
+        contadorMujeres = contadorMujeres + 1
+
+promedioTotal = sumaEdadesTotal / totalAlumnos
+
+print("Promedio de edad de todo el grupo:", promedioTotal)
+
+if contadorHombres > 0:
+    promedioHombres = sumaEdadesHombres / contadorHombres
+    print("Promedio de edad de los hombres:", promedioHombres)
+else:
+    print("No se registraron hombres.")
+
+if contadorMujeres > 0:
+    promedioMujeres = sumaEdadesMujeres / contadorMujeres
+    print("Promedio de edad de las mujeres:", promedioMujeres)
+else:
+    print("No se registraron mujeres.")

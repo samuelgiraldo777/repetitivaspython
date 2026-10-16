@@ -1,0 +1,16 @@
+positivos = 0
+negativos = 0
+neutros =0
+
+for contador in range(5):
+    numero = int(input("ingrese un numero: "))
+    
+    if numero > 0:
+        positivos = positivos + 1
+    elif numero < 0:
+        negativos = negativos + 1
+    else: 
+        neutros = neutros + 1
+    print("cantidad de numeros positivos:",positivos)
+    print("cantidad de numeros negativos:", negativos)
+    print("cantidad de nueros neutros,", neutros)      

@@ -1,0 +1,27 @@
+   # Acumulador para el promedio
+sumaNotas = 0
+
+# Variables para guardar las notas extremas
+notaMasAlta = 0.0
+notaMasBaja = 5.0
+
+# Lectura de 20 calificaciones
+for contador in range(20):
+    notaActual = float(input("Ingrese la calificación del alumno: "))
+    sumaNotas = sumaNotas + notaActual
+    
+    # Asignación de la nota inicial para la primera iteración
+    if contador == 0:
+        notaMasAlta = notaActual
+        notaMasBaja = notaActual
+    else:
+        if notaActual > notaMasAlta:
+            notaMasAlta = notaActual
+        if notaActual < notaMasBaja:
+            notaMasBaja = notaActual
+
+promedioGrupo = sumaNotas / 20
+
+print("El promedio del grupo es:", promedioGrupo)
+print("La calificación más alta es:", notaMasAlta)
+print("La calificación más baja es:", notaMasBaja)

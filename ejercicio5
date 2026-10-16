@@ -1,0 +1,40 @@
+# Acumuladores de peso
+pesoNinos = 0
+pesoJovenes = 0
+pesoAdultos = 0
+pesoAncianos = 0
+
+# Contadores de personas por categoría
+contadorNinos = 0
+contadorJovenes = 0
+contadorAdultos = 0
+contadorAncianos = 0
+
+# Recolección de datos de 50 personas
+for contador in range(50):
+    edadPersona = int(input("Ingrese la edad de la persona: "))
+    pesoPersona = float(input("Ingrese el peso de la persona (kg): "))
+    
+    # Clasificación por categoría según la tabla
+    if edadPersona >= 0 and edadPersona <= 12:
+        pesoNinos = pesoNinos + pesoPersona
+        contadorNinos = contadorNinos + 1
+    elif edadPersona >= 13 and edadPersona <= 29:
+        pesoJovenes = pesoJovenes + pesoPersona
+        contadorJovenes = contadorJovenes + 1
+    elif edadPersona >= 30 and edadPersona <= 59:
+        pesoAdultos = pesoAdultos + pesoPersona
+        contadorAdultos = contadorAdultos + 1
+    elif edadPersona >= 60:
+        pesoAncianos = pesoAncianos + pesoPersona
+        contadorAncianos = contadorAncianos + 1
+
+# Cálculo e impresión de promedios si existen datos en la categoría
+if contadorNinos > 0:
+    print("Promedio peso niños (0-12 años):", pesoNinos / contadorNinos)
+if contadorJovenes > 0:
+    print("Promedio peso jóvenes (13-29 años):", pesoJovenes / contadorJovenes)
+if contadorAdultos > 0:
+    print("Promedio peso adultos (30-59 años):", pesoAdultos / contadorAdultos)
+if contadorAncianos > 0:
+    print("Promedio peso ancianos (60+ años):", pesoAncianos / contadorAncianos)

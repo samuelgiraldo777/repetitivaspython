@@ -1,0 +1,6 @@
+productoAcumulado = 1
+
+for numero in range(1, 21):
+    productoAcumulado = productoAcumulado * numero
+
+print("El producto de los 20 primeros números naturales es:", productoAcumulado)

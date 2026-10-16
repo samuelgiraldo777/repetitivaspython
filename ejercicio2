@@ -1,0 +1,12 @@
+spositivos = 0
+for contador in range(10):
+     negativo = int(input("ingrese un numero negativo"))
+     if negativo < 0:
+         positivo = negativo * -1
+     else:
+        positivo = negativo
+     spositivos = spositivos + positivo
+     print("la suma de los numeros convertidos a positivos es:", spositivos)
+    
+         
+     

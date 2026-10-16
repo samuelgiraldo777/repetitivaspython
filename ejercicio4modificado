@@ -1,0 +1,16 @@
+valorCompra = float(input("Ingrese el valor total de la compra: "))
+color = input("Ingrese el color de la balota (rojo, verde, etc.): ")
+
+if color == "rojo" or color == "Rojo":
+    descuento = valorCompra * 0.15
+elif color == "verde" or color == "Verde":
+    descuento = valorCompra * 0.20
+else:
+    descuento = 0.0
+
+valorPagar = valorCompra - descuento
+
+print("Valor de la compra:", valorCompra)
+print("Color de la balota:", color)
+print("Descuento aplicado:", descuento)
+print("Valor total a pagar:", valorPagar)

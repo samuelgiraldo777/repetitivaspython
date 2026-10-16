@@ -1,0 +1,9 @@
+# Entrada del número base
+numeroTabla = int(input("Ingrese el número para generar la tabla de multiplicar: "))
+
+print("Tabla de multiplicar del", numeroTabla)
+
+# Ciclo del 1 al 10 para construir la tabla
+for multiplicador in range(1, 11):
+    producto = numeroTabla * multiplicador
+    print(numeroTabla, "x", multiplicador, "=", producto)

@@ -1,0 +1,37 @@
+contadorHombres = 0
+contadorMujeres = 0
+sumaAlturas = 0
+contadorAlumnos = 0
+mayor170 = 0
+menorIgual150 = 0
+
+edad = int(input("Ingrese la edad del alumno (0 para terminar): "))
+
+while edad != 0:
+    sexo = input("Ingrese el sexo del alumno (H/M): ")
+    altura = float(input("Ingrese la altura del alumno en metros (ej: 1.75): "))
+    
+    contadorAlumnos = contadorAlumnos + 1
+    sumaAlturas = sumaAlturas + altura
+    
+    if sexo == "H" or sexo == "h":
+        contadorHombres = contadorHombres + 1
+    elif sexo == "M" or sexo == "m":
+        contadorMujeres = contadorMujeres + 1
+        
+    if altura > 1.70:
+        mayor170 = mayor170 + 1
+    elif altura <= 1.50:
+        menorIgual150 = menorIgual150 + 1
+        
+    edad = int(input("Ingrese la edad del alumno (0 para terminar): "))
+
+if contadorAlumnos > 0:
+    alturaPromedio = sumaAlturas / contadorAlumnos
+    print("Cantidad de hombres:", contadorHombres)
+    print("Cantidad de mujeres:", contadorMujeres)
+    print("Altura promedio del grupo:", alturaPromedio)
+    print("Alumnos con altura mayor a 1.70:", mayor170)
+    print("Alumnos con altura menor o igual a 1.50:", menorIgual150)
+else:
+    print("No se ingresaron datos de alumnos.")

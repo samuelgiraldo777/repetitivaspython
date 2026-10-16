@@ -1,0 +1,29 @@
+# Para facilitar los rangos de meses/años, pedimos la edad en meses
+edad_meses = float(input("Ingrese la edad en meses (si tiene años, multiplíquelos por 12): "))
+sexo = input("Ingrese el sexo (M para mujer, H para hombre - solo si es mayor de 15 años): ").strip().upper()
+nivel_hb = float(input("Ingrese el nivel de hemoglobina registrado (g%): "))
+
+# Definimos el límite mínimo de hemoglobina según la tabla médica
+if edad_meses <= 1:
+  min_hb = 13.0
+elif edad_meses <= 6:
+  min_hb = 10.0
+elif edad_meses <= 12:
+  min_hb = 11.0
+elif edad_meses <= 60:  # 5 años = 60 meses
+  min_hb = 11.5
+elif edad_meses <= 120:  # 10 años = 120 meses
+  min_hb = 12.6
+elif edad_meses <= 180:  # 15 años = 180 meses
+  min_hb = 13.0
+else:  # Mayores de 15 años (> 180 meses)
+  if sexo == "M":
+    min_hb = 12.0
+  else:
+    min_hb = 14.0
+
+# Si la hemoglobina del paciente es menor que el mínimo del rango, es POSITIVO para anemia
+if nivel_hb < min_hb:
+  print(f"Resultado: POSITIVO (Tiene anemia, ya que su Hb de {nivel_hb} está por debajo del mínimo de {min_hb})")
+else:
+  print(f"Resultado: NEGATIVO (No tiene anemia, su Hb de {nivel_hb} es adecuada)")

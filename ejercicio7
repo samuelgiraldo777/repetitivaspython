@@ -1,0 +1,14 @@
+cantidad = int(input("Ingrese la cantidad de llantas que desea comprar: "))
+
+if cantidad < 5:
+  precio_unitario = 300000
+elif cantidad <= 10:  # Entre 5 y 10 llantas
+  precio_unitario = 250000
+else:  # Más de 10 llantas
+  precio_unitario = 200000
+
+total_pagar = cantidad * precio_unitario
+
+print(f"Cantidad de llantas compradas: {cantidad}")
+print(f"Precio por cada llanta: ${precio_unitario:,.2f}")
+print(f"Dinero total a pagar: ${total_pagar:,.2f}")

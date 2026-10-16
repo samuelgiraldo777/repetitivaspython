@@ -1,0 +1,13 @@
+promedio = float(input("Ingrese el promedio obtenido en el último periodo: "))
+pension_base = float(input("Ingrese el valor base de la pensión: "))
+
+if promedio >= 4.0:
+  descuento = pension_base * 0.30
+  valor_pagar = pension_base - descuento
+  print("¡Felicitaciones! Obtuvo un 30% de descuento en su pensión.")
+else:
+  iva = pension_base * 0.10
+  valor_pagar = pension_base + iva
+  print("No alcanzó el promedio. Debe pagar la pensión completa más el 10% de IVA.")
+
+print(f"Total a pagar: ${valor_pagar:,.2f}")
